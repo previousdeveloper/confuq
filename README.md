@@ -1,0 +1,2 @@
+# confuq
+Configuration library
