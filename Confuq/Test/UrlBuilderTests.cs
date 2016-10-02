@@ -22,7 +22,7 @@ namespace Test
         }
 
         [Test]
-        public void Test()
+        public void Build_Test()
         {
             string applicationName = FixtureRepository.Create<string>();
             string baseUrl = FixtureRepository.Create<string>();

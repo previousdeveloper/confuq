@@ -5,5 +5,6 @@
         string GetBranch();
         string GetApplicationName();
         string GetBaseUrl();
+        double? Interval { get; }
     }
 }

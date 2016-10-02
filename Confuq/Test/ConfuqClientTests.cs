@@ -7,7 +7,7 @@ using NUnit.Framework;
 
 namespace Test
 {
-    public class ConfuqTests : TestBase
+    public class ConfuqClientTests : TestBase
     {
         private IConfuqClient _confuqClient;
         private IConfiguration _configuration;
@@ -22,7 +22,7 @@ namespace Test
         [Test]
         public void Config_Should_Be_Exist_Test()
         {
-            bool result = _confuqClient.Get<bool>("isValid2");
+            bool result = _confuqClient.Get<bool>("isValid");
 
             result.Should().BeFalse();
 

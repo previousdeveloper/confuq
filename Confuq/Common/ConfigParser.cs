@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using System.IO;
-
 using Common.Interface;
 
 namespace Common
@@ -14,6 +13,7 @@ namespace Common
         public ConfigParser(IConfiguration configuration)
         {
             _configuration = configuration;
+
             _builder = new UrlBuilder(_configuration);
 
             _fileReader = new FileReader(_builder);

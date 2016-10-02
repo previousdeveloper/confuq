@@ -7,16 +7,16 @@ namespace Client
 {
     public class ConfuqClient : IConfuqClient
     {
-        private readonly IConfigParser _configParser;
+        private readonly ICacheProvider _cacheProvider;
 
         public ConfuqClient(IConfiguration configuration)
         {
-            _configParser = new ConfigParser(configuration);
+            _cacheProvider = new CacheProvider(configuration);
         }
 
         public T Get<T>(string key)
         {
-            string value = _configParser.Get(key);
+            string value = _cacheProvider.Get(key);
 
             if (string.IsNullOrEmpty(value))
             {

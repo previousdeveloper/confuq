@@ -18,5 +18,7 @@ namespace Test
         {
             return "https://raw.githubusercontent.com/previousdeveloper/cfg4j-git-sample-config";
         }
+
+        public double? Interval => 1 * 1000;
     }
 }

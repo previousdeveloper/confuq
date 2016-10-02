@@ -1,6 +1,6 @@
 ﻿namespace Common.Interface
 {
-    public interface IConfigParser
+    public interface ICacheProvider
     {
         string Get(string key);
     }
