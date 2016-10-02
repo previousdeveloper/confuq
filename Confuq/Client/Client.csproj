@@ -71,6 +71,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ConfuqClient.cs" />
+    <Compile Include="GithubKeyNotFoundException.cs" />
     <Compile Include="Interface\IConfuqClient.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

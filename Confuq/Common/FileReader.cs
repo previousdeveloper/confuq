@@ -8,6 +8,7 @@ namespace Common
     public class FileReader : IFileReader
     {
         private readonly IUrlBuilder _builder;
+
         public FileReader(IUrlBuilder builder)
         {
             _builder = builder;
@@ -28,7 +29,7 @@ namespace Common
             {
                 result = new WebClient().DownloadString(url);
             }
-            catch (FileNotFoundException ex)
+            catch (FileUrlException ex)
             {
 
                 throw ex;

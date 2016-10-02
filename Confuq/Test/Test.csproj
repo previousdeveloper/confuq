@@ -64,9 +64,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ConfuqConfiguration.cs" />
     <Compile Include="Constants.cs" />
+    <Compile Include="ConfuqTests.cs" />
     <Compile Include="FileReaderTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UrlBuilderTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

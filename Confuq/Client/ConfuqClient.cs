@@ -9,12 +9,9 @@ namespace Client
     {
         private readonly IConfigParser _configParser;
 
-        private readonly IConfiguration _configuration;
         public ConfuqClient(IConfiguration configuration)
         {
-            _configuration = configuration;
-
-            _configParser = new ConfigParser(_configuration);
+            _configParser = new ConfigParser(configuration);
         }
 
         public T Get<T>(string key)
@@ -27,24 +24,6 @@ namespace Client
             }
 
             return (T)Convert.ChangeType(value, typeof(T));
-        }
-    }
-
-    public class GithubKeyNotFoundException : Exception
-    {
-        public GithubKeyNotFoundException() : base()
-
-        {
-
-        }
-        public GithubKeyNotFoundException(String message) : base(message)
-        {
-
-        }
-
-        public GithubKeyNotFoundException(String message, Exception innerException) : base(message, innerException)
-        {
-
         }
     }
 }
