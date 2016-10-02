@@ -1,6 +1,5 @@
-﻿using System.Collections.Generic;
-using Common;
-using Common.Exception;
+﻿using Client;
+using Client.Interface;
 using Common.Interface;
 using Common.Testing.NUnit;
 using FluentAssertions;
@@ -10,41 +9,41 @@ namespace Test
 {
     public class FileReaderTests : TestBase
     {
-        private IFileReader _fileReader;
-        private IYamlParser _yamlParser;
+        private IConfuqClient _confuqClient;
+        private IConfiguration _configuration;
 
         protected override void FinalizeSetUp()
         {
-            _fileReader = new FileReader();
-            _yamlParser = new YamlParser();
-        }
-
-        [Test]
-        public void FileReader_Should_Not_Be_Null_Test()
-        {
-            string result = _fileReader.Read(Constants.TextUrl);
-
-            result.Should().NotBeNull();
-        }
-
-
-        [Test,ExpectedException(typeof(FileUrlException))]
-        public void FileReader_Url_Should_Be_Empty_Test()
-        {
-            string result = _fileReader.Read("");
-
-            result.Should().BeEmpty();
+            _configuration = new ConfuqConfiguration();
+            _confuqClient = new ConfuqClient(_configuration);
 
         }
 
         [Test]
-        public void YamlParser_Test()
+        public void Config_Should_Be_Exist_Test()
         {
-            string result = _fileReader.Read(Constants.TextUrl);
+            bool result = _confuqClient.Get<bool>("isValid2");
 
-            Dictionary<string, string> s = _yamlParser.Parse(result);
+            result.Should().BeFalse();
 
-            s.Should().NotBeEmpty();
+        }
+    }
+
+    public class ConfuqConfiguration : IConfiguration
+    {
+        public string GetBranch()
+        {
+            return "master";
+        }
+
+        public string GetApplicationName()
+        {
+            return "firstApp";
+        }
+
+        public string GetBaseUrl()
+        {
+            return "https://raw.githubusercontent.com/previousdeveloper/cfg4j-git-sample-config";
         }
     }
 }

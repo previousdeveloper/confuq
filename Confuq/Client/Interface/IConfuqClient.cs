@@ -2,6 +2,6 @@
 {
     public interface IConfuqClient
     {
-        T Get<T>(T key);
+        T Get<T>(string key);
     }
 }

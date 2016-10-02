@@ -7,9 +7,17 @@ namespace Common
 {
     public class FileReader : IFileReader
     {
-        public string Read(string url)
+        private readonly IUrlBuilder _builder;
+        public FileReader(IUrlBuilder builder)
+        {
+            _builder = builder;
+        }
+
+        public string Read()
         {
             string result = null;
+
+            string url = _builder.Build();
 
             if (string.IsNullOrEmpty(url))
             {
