@@ -1,2 +1,2 @@
 # confuq
-Configuration library
+Github based Configuration library
