@@ -2,9 +2,18 @@
 
 Github based Configuration library
 
+## Install
+
+```bash
+  
+PM> Install-Package Confuq
+
+```
+
 ## How to use  
 
 **Configuration**  
+
 
 ```csharp
   public class ConfuqConfiguration : IConfiguration
@@ -39,7 +48,7 @@ Github based Configuration library
   bool result = _confuqClient.Get<bool>("isValid");
 
   
-
 ```
+
 
 
